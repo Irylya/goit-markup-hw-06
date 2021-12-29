@@ -625,7 +625,7 @@ body {
 
 /* Модальне вікно */
 .backdrop {
-  z-index: 20;
+  z-index: 10;
   position: fixed;
   top: 0;
   right: 0;
@@ -648,6 +648,7 @@ body {
 }
 
 .modal {
+  z-index: 20;
   position: absolute;
   padding: 40px;
 
@@ -670,6 +671,10 @@ body {
   position: absolute;
   right: 8px;
   top: 8px;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
 
   width: 30px;
   height: 30px;
@@ -677,7 +682,6 @@ body {
   border-radius: 50%;
   background-color: inherit;
   cursor: pointer;
-  justify-content: center;
 }
 
 .icon-box-close {
@@ -732,13 +736,16 @@ body {
   transform: fill var(--shift), border-color var(--shift);
 }
 
+.form--input:hover,
 .form--input:focus,
+.form--message:hover,
 .form--message:focus {
   outline-color: var(--acsent-color);
 
   border-color: var(--acsent-color);
 }
 
+.form--input:hover + .form--icon,
 .form--input:focus + .form--icon {
   fill: var(--acsent-color);
 }
@@ -788,9 +795,6 @@ body {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.form--policy-check {
 }
 
 .check-icon {
